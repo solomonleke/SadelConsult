@@ -14,6 +14,7 @@ import { MdCheckCircle, MdArrowForward, MdArchitecture, MdEngineering, MdCalcula
 import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
 import ServiceCard from '../components/ServiceCard';
+import zariaImage from '../assets/ZariaWaterExpansion.webp';
 
 const Home = () => {
   return (
@@ -194,6 +195,7 @@ const Home = () => {
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
             <ProjectCard
               title="Zaria Water Supply Expansion"
+              image={zariaImage}
               sector="Water & Hydraulics"
               value="761 km Network"
               description="Expansion of water supply for 2.2M population including 27 reservoirs and 11 booster stations."

@@ -71,7 +71,7 @@ export default function Footer() {
               <Text fontFamily="heading" fontWeight="bold" fontSize="2xl" color="brand.gold">
                 SADEL CONSULTS
               </Text>
-              <Text fontSize={'sm'} mt={2}>
+              <Text fontSize={'sm'} mt={2} color="whiteAlpha.700">
                 Architecture & Engineering Value, Delivering Futures.
               </Text>
             </Box>
@@ -105,15 +105,15 @@ export default function Footer() {
             <ListHeader>Contact Us</ListHeader>
             <HStack>
               <Icon as={MdLocationOn as any} color="brand.gold" />
-              <Text fontSize="sm">37 Babington Ashaye St, Okota, Lagos</Text>
+              <Text fontSize="sm" color="whiteAlpha.900">37 Babington Ashaye St, Okota, Lagos</Text>
             </HStack>
             <HStack>
               <Icon as={MdPhone as any} color="brand.gold" />
-              <Text fontSize="sm">+234 802 393 8410</Text>
+              <Text fontSize="sm" color="whiteAlpha.900">+234 802 393 8410</Text>
             </HStack>
             <HStack>
               <Icon as={MdEmail as any} color="brand.gold" />
-              <Text fontSize="sm">sadelconsults@gmail.com</Text>
+              <Text fontSize="sm" color="whiteAlpha.900">sadelconsults@gmail.com</Text>
             </HStack>
            </Stack>
         </SimpleGrid>
@@ -121,7 +121,7 @@ export default function Footer() {
         <Divider borderColor="whiteAlpha.300" mb={8} />
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} alignItems="center">
-          <Text fontSize={'xs'}>
+          <Text fontSize={'xs'} color="whiteAlpha.600">
             © 2024 Sadel Consults Limited (RC 798935). All rights reserved.
           </Text>
           <HStack spacing={4} justify={{ base: 'start', md: 'end' }}>
