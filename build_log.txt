@@ -1,0 +1,17 @@
+
+> web-app@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Failed to compile.
+
+TS2322: Type 'IconType' is not assignable to type 'ElementType<any, keyof IntrinsicElements> | undefined'.
+  [0m [90m 78 |[39m             [33m<[39m[33mStack[39m direction[33m=[39m{[32m'row'[39m} spacing[33m=[39m{[35m6[39m}[33m>[39m
+   [90m 79 |[39m               [33m<[39m[33mSocialButton[39m label[33m=[39m{[32m'Twitter'[39m} href[33m=[39m{[32m'#'[39m}[33m>[39m
+  [31m[1m>[22m[39m[90m 80 |[39m                 [33m<[39m[33mIcon[39m [36mas[39m[33m=[39m{[33mFaTwitter[39m} [33m/[39m[33m>[39m
+   [90m    |[39m                       [31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 81 |[39m               [33m<[39m[33m/[39m[33mSocialButton[39m[33m>[39m
+   [90m 82 |[39m               [33m<[39m[33mSocialButton[39m label[33m=[39m{[32m'LinkedIn'[39m} href[33m=[39m{[32m'#'[39m}[33m>[39m
+   [90m 83 |[39m                 [33m<[39m[33mIcon[39m [36mas[39m[33m=[39m{[33mFaLinkedin[39m} [33m/[39m[33m>[39m[0m
+
+
