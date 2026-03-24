@@ -13,11 +13,35 @@ import {
   TabPanel,
   Icon,
 } from '@chakra-ui/react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { MdArchitecture, MdEngineering, MdCalculate, MdConstruction } from 'react-icons/md';
 import Layout from '../components/Layout';
 import ServiceCard from '../components/ServiceCard';
 
 const Expertise = () => {
+  const { service } = useParams();
+  const navigate = useNavigate();
+
+  const tabMap: Record<string, number> = {
+    'architecture': 0,
+    'engineering': 1,
+    'cost-management': 2,
+    'project-management': 3,
+  };
+
+  const reverseTabMap: Record<number, string> = {
+    0: 'architecture',
+    1: 'engineering',
+    2: 'cost-management',
+    3: 'project-management',
+  };
+
+  const activeIndex = service ? tabMap[service] ?? 0 : 0;
+
+  const handleTabChange = (index: number) => {
+    navigate(`/expertise/${reverseTabMap[index]}`);
+  };
+
   return (
     <Layout>
       <Box bg="brand.navy" color="white" py={20}>
@@ -33,7 +57,13 @@ const Expertise = () => {
 
       <Box py={20}>
         <Container maxW="container.xl">
-          <Tabs isFitted variant="enclosed" colorScheme="navy">
+          <Tabs 
+            isFitted 
+            variant="enclosed" 
+            colorScheme="navy" 
+            index={activeIndex} 
+            onChange={handleTabChange}
+          >
             <TabList mb="1em">
               <Tab fontWeight="bold" fontSize="lg">
                 <Icon as={MdArchitecture as any} mr={2} /> Architecture

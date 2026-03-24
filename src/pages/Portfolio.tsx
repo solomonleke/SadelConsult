@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   Box,
   Container,
@@ -67,7 +68,34 @@ const PROJECTS = [
 const SECTORS = ['All', 'Buildings', 'Transportation', 'Water', 'Mining', 'Health', 'Industrial'];
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState('All');
+  const { sector } = useParams();
+  const navigate = useNavigate();
+  
+  // Map URL param to capitalization used in component state
+  const initialFilter = sector 
+    ? SECTORS.find(s => s.toLowerCase() === sector.toLowerCase()) ?? 'All'
+    : 'All';
+
+  const [filter, setFilter] = useState(initialFilter);
+
+  // Sync state with URL parameter changes (e.g. from navbar clicks)
+  useEffect(() => {
+    if (sector) {
+      const match = SECTORS.find(s => s.toLowerCase() === sector.toLowerCase());
+      if (match) setFilter(match);
+    } else {
+      setFilter('All');
+    }
+  }, [sector]);
+
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+    if (newFilter === 'All') {
+      navigate('/portfolio');
+    } else {
+      navigate(`/portfolio/${newFilter.toLowerCase()}`);
+    }
+  };
 
   const filteredProjects = filter === 'All' 
     ? PROJECTS 
@@ -96,7 +124,7 @@ const Portfolio = () => {
                   size="sm"
                   variant={filter === sector ? 'solid' : 'outline'}
                   colorScheme={filter === sector ? 'navy' : 'gray'}
-                  onClick={() => setFilter(sector)}
+                  onClick={() => handleFilterChange(sector)}
                   borderRadius="none"
                   px={6}
                 >
