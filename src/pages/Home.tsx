@@ -30,7 +30,7 @@ const Home = () => {
         <Container maxW={'container.xl'}>
           <Stack spacing={8} maxW={'2xl'} zIndex={1} position="relative">
             <Text
-              color={'brand.gold'}
+              color={'brand.teal'}
               fontWeight={700}
               fontSize={'sm'}
               textTransform={'uppercase'}
@@ -51,9 +51,9 @@ const Home = () => {
             </Text>
             <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
               <Button
-                bg={'brand.gold'}
+                bg={'brand.teal'}
                 color={'brand.navy'}
-                _hover={{ bg: 'yellow.500' }}
+                _hover={{ bg: '#008f7a' }}
                 size="lg"
                 px={10}
               >
@@ -87,7 +87,7 @@ const Home = () => {
       </Box>
 
       {/* Compliance Ribbon */}
-      <Box bg="brand.gold" py={4}>
+      <Box bg="brand.teal" py={4}>
         <Container maxW="container.xl">
           <Flex
             direction={{ base: 'column', md: 'row' }}
@@ -182,12 +182,12 @@ const Home = () => {
       <Box py={20} bg="brand.navy" color="white">
         <Container maxW="container.xl">
           <Stack spacing={12} mb={16}>
-            <Heading fontFamily="heading" color="brand.gold">Flagship Projects</Heading>
+            <Heading fontFamily="heading" color="brand.teal">Flagship Projects</Heading>
             <Flex justify="space-between" align="flex-end">
               <Text maxW="2xl" color="whiteAlpha.800">
                 Delivering critical infrastructure across Nigeria.
               </Text>
-              <Button colorScheme="yellow" variant="link" color="brand.gold">
+              <Button colorScheme="teal" variant="link" color="brand.teal">
                 View All Projects
               </Button>
             </Flex>

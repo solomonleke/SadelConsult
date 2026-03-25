@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, sector, value, descrip
       bg={bgColor}
       borderWidth="1px"
       borderColor={borderColor}
-      _hover={{ transform: 'translateY(-5px)', shadow: '2xl', borderColor: 'brand.gold' }}
+      _hover={{ transform: 'translateY(-5px)', shadow: '2xl', borderColor: 'brand.teal' }}
       transition="all 0.3s"
       overflow="hidden"
     >
@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, sector, value, descrip
           {title}
         </Heading>
         {value && (
-          <Text fontWeight="bold" color="brand.gold" fontSize="sm">
+          <Text fontWeight="bold" color="brand.teal" fontSize="sm">
             Value: {value}
           </Text>
         )}

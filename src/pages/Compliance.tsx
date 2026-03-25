@@ -124,7 +124,7 @@ const Compliance = () => {
 
 const AccreditationCard = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
   <HStack p={4} bg="white" shadow="sm" border="1px solid" borderColor="gray.100">
-    <Icon as={icon as any} w={6} h={6} color="brand.gold" />
+    <Icon as={icon as any} w={6} h={6} color="brand.teal" />
     <Box>
       <Text fontWeight="bold" size="sm">{title}</Text>
       <Text fontSize="xs" color="gray.600">{desc}</Text>

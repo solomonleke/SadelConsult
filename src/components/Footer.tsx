@@ -18,7 +18,7 @@ import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 const ListHeader = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Text fontWeight={'700'} fontSize={'lg'} mb={2} color={'brand.gold'} fontFamily="heading">
+    <Text fontWeight={'700'} fontSize={'lg'} mb={2} color={'brand.teal'} fontFamily="heading">
       {children}
     </Text>
   );
@@ -68,7 +68,7 @@ export default function Footer() {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8} mb={10}>
           <Stack spacing={6}>
             <Box>
-              <Text fontFamily="heading" fontWeight="bold" fontSize="2xl" color="brand.gold">
+              <Text fontFamily="heading" fontWeight="bold" fontSize="2xl" color="brand.teal">
                 SADEL CONSULTS
               </Text>
               <Text fontSize={'sm'} mt={2} color="whiteAlpha.700">
@@ -104,15 +104,15 @@ export default function Footer() {
           <Stack align={'flex-start'}>
             <ListHeader>Contact Us</ListHeader>
             <HStack>
-              <Icon as={MdLocationOn as any} color="brand.gold" />
+              <Icon as={MdLocationOn as any} color="brand.teal" />
               <Text fontSize="sm" color="whiteAlpha.900">37 Babington Ashaye St, Okota, Lagos</Text>
             </HStack>
             <HStack>
-              <Icon as={MdPhone as any} color="brand.gold" />
+              <Icon as={MdPhone as any} color="brand.teal" />
               <Text fontSize="sm" color="whiteAlpha.900">+234 802 393 8410</Text>
             </HStack>
             <HStack>
-              <Icon as={MdEmail as any} color="brand.gold" />
+              <Icon as={MdEmail as any} color="brand.teal" />
               <Text fontSize="sm" color="whiteAlpha.900">sadelconsults@gmail.com</Text>
             </HStack>
            </Stack>
@@ -125,10 +125,10 @@ export default function Footer() {
             © 2024 Sadel Consults Limited (RC 798935). All rights reserved.
           </Text>
           <HStack spacing={4} justify={{ base: 'start', md: 'end' }}>
-            <Text fontSize={'xs'} fontWeight="bold" color="brand.gold">COREN</Text>
-            <Text fontSize={'xs'} fontWeight="bold" color="brand.gold">ARCON</Text>
-            <Text fontSize={'xs'} fontWeight="bold" color="brand.gold">NIQS</Text>
-            <Text fontSize={'xs'} fontWeight="bold" color="brand.gold">NSE</Text>
+            <Text fontSize={'xs'} fontWeight="bold" color="brand.teal">COREN</Text>
+            <Text fontSize={'xs'} fontWeight="bold" color="brand.teal">ARCON</Text>
+            <Text fontSize={'xs'} fontWeight="bold" color="brand.teal">NIQS</Text>
+            <Text fontSize={'xs'} fontWeight="bold" color="brand.teal">NSE</Text>
           </HStack>
         </SimpleGrid>
       </Container>

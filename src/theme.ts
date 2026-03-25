@@ -13,10 +13,9 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
-      navy: '#002147', // Deep Navy Blue
-      steel: '#708090', // Steel Grey
-      gold: '#C5A021', // Gold accent
-      orange: '#FF8C00', // Safety Orange
+      navy: '#0a1628', // Core Navy from Logo
+      steel: '#708090', 
+      teal: '#00BFA5',  // Vibrant Teal from Logo
       white: '#FFFFFF',
       offWhite: '#F8F9FA',
     },
@@ -46,7 +45,7 @@ const theme = extendTheme({
           bg: props.colorScheme === 'brand' ? 'brand.navy' : undefined,
           color: 'white',
           _hover: {
-            bg: props.colorScheme === 'brand' ? 'brand.gold' : undefined,
+            bg: props.colorScheme === 'brand' ? 'brand.teal' : undefined,
           },
         }),
         outline: {

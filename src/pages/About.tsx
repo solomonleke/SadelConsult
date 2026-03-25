@@ -10,7 +10,7 @@ import {
   Icon,
   VStack,
 } from '@chakra-ui/react';
-import { MdHistory, MdEmojiObjects, MdGroups } from 'react-icons/md';
+import { MdHistory, MdGroups } from 'react-icons/md';
 import Layout from '../components/Layout';
 
 const About = () => {
@@ -48,7 +48,7 @@ const About = () => {
                 <Feature icon={MdGroups} title="Multi-disciplinary" desc="Expert team" />
               </Flex>
             </VStack>
-            <Box bg="gray.100" p={8} borderLeft="4px solid" borderColor="brand.gold">
+            <Box bg="gray.100" p={8} borderLeft="4px solid" borderColor="brand.teal">
               <Heading size="md" mb={4} color="brand.navy">Our Mission</Heading>
               <Text fontStyle="italic" fontSize="lg">
                 "To translate development ambitions into bankable, sustainable, 
@@ -87,7 +87,7 @@ const About = () => {
 
 const Feature = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
   <Stack spacing={1}>
-    <Icon as={icon} w={6} h={6} color="brand.gold" />
+    <Icon as={icon} w={6} h={6} color="brand.teal" />
     <Text fontWeight="bold" size="sm">{title}</Text>
     <Text fontSize="xs" color="gray.600">{desc}</Text>
   </Stack>

@@ -28,7 +28,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, ite
       bg={bgColor}
       borderWidth="1px"
       borderColor={borderColor}
-      _hover={{ borderColor: 'brand.gold', shadow: 'xl', transform: 'translateY(-5px)' }}
+      _hover={{ borderColor: 'brand.teal', shadow: 'xl', transform: 'translateY(-5px)' }}
       transition="all 0.3s"
       height="100%"
     >
@@ -56,7 +56,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, ite
         <Stack spacing={2} pt={2}>
           {items.map((item, index) => (
             <Flex key={index} align="center">
-              <Icon as={MdCheckCircle as any} w={2} h={2} color="brand.gold" mr={2} />
+              <Icon as={MdCheckCircle as any} w={2} h={2} color="brand.teal" mr={2} />
               <Text fontSize="xs" fontWeight="500">
                 {item}
               </Text>

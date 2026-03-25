@@ -15,16 +15,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes goldShine {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
-
-/* ── Custom Scrollbar ───────────────────────────────── */
-/* WebKit (Chrome, Edge, Safari) */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -32,17 +25,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c9a227;
-  border-radius: 4px;
-  border: 2px solid #0a1628;
+  background: #00BFA5;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffd700;
+  background: #008f7a;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #c9a227 #0a1628;
+  scrollbar-color: #00BFA5 #0a1628;
 }

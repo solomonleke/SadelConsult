@@ -9,187 +9,160 @@ import {
   Collapse,
   Icon,
   Link,
-  useColorModeValue,
   useDisclosure,
-  Container,
+  Image,
 } from '@chakra-ui/react';
 import {
+  HamburgerIcon,
+  CloseIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
 } from '@chakra-ui/icons';
-import { NavLink as RouterLink, useLocation } from 'react-router-dom';
-
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import logo from '../assets/sadelLogo.png';
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box position="sticky" top="0" zIndex="sticky">
+    <Box position="sticky" top="0" zIndex="sticky" w="full">
       <Flex
-        bg={useColorModeValue('brand.navy', 'gray.800')}
-        color={useColorModeValue('white', 'white')}
-        minH={'90px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('brand.gold', 'gray.900')}
-        alignItems={'center'}
+        bg="brand.navy"
+        color="white"
+        minH={'80px'}
+        py={{ base: 3 }}
+        px={{ base: 4, md: 10 }}
+        align={'center'}
+        position="relative"
       >
-        <Container maxW="container.xl" display="flex" alignItems="center" position="relative">
-          {/* Logo — always left */}
+        {/* LOGO SECTION - Left */}
+        <Flex justify="start" flex={1}>
           <Link
             as={RouterLink}
             to="/"
+            _hover={{ textDecoration: 'none' }}
             display="flex"
             alignItems="center"
-            _hover={{ textDecoration: 'none' }}
-            zIndex={1}
           >
-            <Text
-              fontFamily="'Azonix', sans-serif"
-              fontWeight={400}
-              fontSize="24px"
-              lineHeight="20px"
-              letterSpacing="0px"
-              sx={{
-                background: 'linear-gradient(90deg, #b8860b 0%, #ffd700 30%, #fffacd 50%, #ffd700 70%, #b8860b 100%)',
-                backgroundSize: '200% auto',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                animation: 'goldShine 3s linear infinite',
-              }}
-            >
-              SADEL
-            </Text>
-          </Link>
-
-          {/* Desktop nav — absolutely centered */}
-          <Box
-            display={{ base: 'none', md: 'flex' }}
-            position="absolute"
-            left="50%"
-            transform="translateX(-50%)"
-            zIndex={1}
-          >
-            <Box
-              bg="whiteAlpha.100"
-              border="1px solid"
-              borderColor="whiteAlpha.200"
-              borderRadius="full"
-              px={3}
-              py={2}
-            >
-              <DesktopNav />
-            </Box>
-          </Box>
-
-          {/* Right side: CTA (desktop) + toggle (mobile) */}
-          <Stack direction="row" spacing={3} alignItems="center" ml="auto" zIndex={1}>
-            <Button
-              as={RouterLink}
-              to="/contact"
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'brand.navy'}
-              bg={'brand.gold'}
-              borderRadius="full"
-              textTransform="capitalize"
-              _hover={{
-                bg: 'yellow.500',
-              }}
-            >
-              Get in Touch
-            </Button>
-
-            {/* Mobile hamburger — right side */}
-            <IconButton
-              display={{ base: 'flex', md: 'none' }}
-              onClick={onToggle}
-              icon={
-                isOpen ? (
-                  <Icon viewBox="0 0 24 24" w={6} h={6} color="white">
-                    <path
-                      fill="currentColor"
-                      d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z"
-                    />
-                  </Icon>
-                ) : (
-                  <Icon viewBox="0 0 24 24" w={6} h={6} color="white">
-                    <rect fill="currentColor" x="3" y="6" width="18" height="2" rx="1" />
-                    <rect fill="currentColor" x="6" y="11" width="12" height="2" rx="1" />
-                    <rect fill="currentColor" x="3" y="16" width="18" height="2" rx="1" />
-                  </Icon>
-                )
-              }
-              variant="ghost"
-              aria-label="Toggle Navigation"
-              _hover={{ bg: 'whiteAlpha.200' }}
+            <Image 
+              src={logo} 
+              alt="SADEL" 
+              h={{ base: "40px", md: "50px" }}
+              objectFit="contain"
             />
-          </Stack>
-        </Container>
+          </Link>
+        </Flex>
+
+        {/* DESKTOP NAV - Center (Absolutely Positioned) */}
+        <Flex
+          display={{ base: 'none', md: 'flex' }}
+          position="absolute"
+          left="50%"
+          transform="translateX(-50%)"
+          align="center"
+          zIndex={1}
+        >
+          <Box
+            bg="whiteAlpha.100"
+            backdropFilter="blur(10px)"
+            border="1px solid"
+            borderColor="whiteAlpha.200"
+            borderRadius="full"
+            px={2}
+            py={2}
+            minW="max-content"
+          >
+            <DesktopNav />
+          </Box>
+        </Flex>
+
+        {/* RIGHT SECTION - Mobile Toggle & CTA */}
+        <Flex align="center" justify="flex-end" flex={1} gap={4}>
+          <Button
+            as={RouterLink}
+            to="/contact"
+            display={{ base: 'none', md: 'inline-flex' }}
+            fontSize={'xs'}
+            fontWeight={600}
+            color={'white'}
+            bg={'brand.teal'}
+            px={8}
+            py={6}
+            borderRadius="full"
+            _hover={{
+              bg: 'white',
+              color: 'brand.navy',
+              transform: 'translateY(-2px)',
+              boxShadow: '0 4px 12px rgba(0, 191, 165, 0.3)',
+            }}
+            transition="all 0.3s ease"
+            textTransform="capitalize"
+            letterSpacing="1px"
+          >
+            Get in Touch
+          </Button>
+
+          <IconButton
+            display={{ base: 'flex', md: 'none' }}
+            onClick={onToggle}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            variant={'ghost'}
+            aria-label={'Toggle Navigation'}
+            color="brand.teal"
+            _hover={{ bg: 'whiteAlpha.100' }}
+          />
+        </Flex>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav onToggle={onToggle} />
       </Collapse>
     </Box>
   );
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('whiteAlpha.900', 'gray.200');
-  const linkHoverColor = useColorModeValue('brand.gold', 'white');
   const location = useLocation();
 
-  const isItemActive = (navItem: NavItem) => {
-    if (navItem.href === '/') return location.pathname === '/';
-    if (navItem.href && location.pathname.startsWith(navItem.href)) return true;
-    if (navItem.children) return navItem.children.some((child) => child.href && location.pathname.startsWith(child.href));
-    return false;
-  };
-
   return (
-    <Stack direction="row" spacing={1} align="center">
+    <Stack direction={'row'} spacing={1}>
       {NAV_ITEMS.map((navItem) => {
-        const active = isItemActive(navItem);
+        const isActive = navItem.href === '/' 
+          ? location.pathname === '/' 
+          : navItem.href && location.pathname.startsWith(navItem.href);
+
         return (
-          <Box key={navItem.label} position="relative" role="group">
-            {/* Trigger */}
+          <Box key={navItem.label} role={'group'} position="relative">
             <Link
               as={RouterLink}
               to={navItem.href ?? '#'}
+              p={2}
+              px={5}
+              fontSize={'sm'}
+              fontWeight={ isActive ? 700 : 500}
+              color={isActive ? 'brand.navy' : 'whiteAlpha.900'}
+              bg={isActive ? 'brand.teal' : 'transparent'}
+              _hover={{
+                textDecoration: 'none',
+                color: isActive ? 'brand.navy' : 'brand.teal',
+                bg: isActive ? 'brand.teal' : 'whiteAlpha.100',
+              }}
+              borderRadius="full"
+              transition="all 0.2s ease"
               display="flex"
               alignItems="center"
               gap={1}
-              px={4}
-              py={2}
-              fontSize="xs"
-              fontWeight={700}
-              borderRadius="full"
-              whiteSpace="nowrap"
               textTransform="capitalize"
               letterSpacing="0.5px"
-              color={active ? 'brand.navy' : linkColor}
-              bg={active ? 'brand.gold' : 'transparent'}
-              transition="all 0.2s"
-              _hover={{
-                textDecoration: 'none',
-                color: active ? 'brand.navy' : linkHoverColor,
-                bg: active ? 'brand.gold' : 'whiteAlpha.200',
-              }}
+              whiteSpace="nowrap"
             >
               {navItem.label}
               {navItem.children && (
                 <Icon
                   as={ChevronDownIcon}
-                  w={3}
-                  h={3}
-                  ml={0.5}
-                  transition="transform 0.25s ease"
-                  sx={{ '[role=group]:hover &': { transform: 'rotate(180deg)' } }}
+                  transition={'all .25s ease-in-out'}
+                  transform={isActive ? 'rotate(0deg)' : 'rotate(0deg)'}
+                  w={4}
+                  h={4}
                 />
               )}
             </Link>
@@ -258,133 +231,123 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   const location = useLocation();
-  const isActive = href && location.pathname.startsWith(href);
+  const isActive = href && location.pathname === href;
 
   return (
     <Link
       as={RouterLink}
       to={href ?? '#'}
-      role="group"
-      display="block"
-      px={4}
-      py={3}
-      borderRadius="lg"
-      bg={isActive ? 'whiteAlpha.200' : 'transparent'}
-      borderLeft={isActive ? '3px solid' : '3px solid transparent'}
-      borderColor={isActive ? 'brand.gold' : 'transparent'}
-      _hover={{
-        bg: 'whiteAlpha.100',
-        borderColor: 'brand.gold',
-        textDecoration: 'none',
-      }}
+      role={'group'}
+      display={'block'}
+      p={3}
+      borderRadius={'lg'}
+      _hover={{ bg: 'whiteAlpha.100' }}
+      position="relative"
       transition="all 0.2s"
     >
-      <Stack direction="row" align="center" justify="space-between">
-        <Box>
+      <Stack direction={'row'} align={'center'}>
+        {/* Active Indicator Bar */}
+        <Box
+          position="absolute"
+          left="2"
+          top="50%"
+          transform="translateY(-50%)"
+          w="3px"
+          h={isActive ? "60%" : "0"}
+          bg="brand.teal"
+          borderRadius="full"
+          transition="all 0.3s ease"
+          opacity={isActive ? 1 : 0}
+          _groupHover={{ h: "60%", opacity: 1 }}
+        />
+        
+        <Box pl={isActive ? 4 : 2} transition="all 0.3s">
           <Text
+            transition={'all .3s ease'}
+            _groupHover={{ color: 'brand.teal' }}
+            fontWeight={isActive ? 700 : 500}
+            color={isActive ? 'brand.teal' : 'white'}
             fontSize="sm"
-            fontWeight={isActive ? 700 : 600}
-            color={isActive ? 'brand.gold' : 'whiteAlpha.900'}
             textTransform="capitalize"
-            letterSpacing="0.5px"
-            transition="color 0.2s"
-            _groupHover={{ color: 'brand.gold' }}
           >
             {label}
           </Text>
-          {subLabel && (
-            <Text fontSize="xs" color="whiteAlpha.500" mt={0.5} fontWeight={400}>
-              {subLabel}
-            </Text>
-          )}
+          <Text fontSize={'xs'} color="whiteAlpha.600">
+            {subLabel}
+          </Text>
         </Box>
-        <Flex
-          transition="all 0.25s ease"
-          transform="translateX(-6px)"
-          opacity={0}
-          _groupHover={{ opacity: 1, transform: 'translateX(0)' }}
-          align="center"
-        >
-          <Icon color="brand.gold" w={4} h={4} as={ChevronRightIcon} />
-        </Flex>
       </Stack>
     </Link>
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ onToggle }: { onToggle: () => void }) => {
   return (
-    <Box
+    <Stack
       bg="brand.navy"
+      p={6}
       display={{ md: 'none' }}
       borderTop="1px solid"
-      borderColor="whiteAlpha.200"
-      boxShadow="0 8px 32px rgba(0,0,0,0.45)"
+      borderColor="whiteAlpha.100"
+      spacing={4}
     >
-      <Stack spacing={0} px={6} py={4}>
-        {NAV_ITEMS.map((navItem, i) => (
-          <Box key={navItem.label}>
-            {i > 0 && <Box h="1px" bg="whiteAlpha.100" />}
-            <MobileNavItem {...navItem} />
-          </Box>
-        ))}
-      </Stack>
-
-      {/* CTA */}
-      <Box px={6} pb={6} pt={2}>
-        <Button
-          as={RouterLink}
-          to="/contact"
-          w="full"
-          fontSize="sm"
-          fontWeight={700}
-          letterSpacing="1px"
-          textTransform="uppercase"
-          color="brand.navy"
-          bg="brand.gold"
-          borderRadius="none"
-          py={6}
-          _hover={{ bg: 'yellow.400' }}
-        >
-          Get in Touch
-        </Button>
-      </Box>
-    </Box>
+      {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.label} onToggle={onToggle} {...navItem} />
+      ))}
+      <Button
+        as={RouterLink}
+        to="/contact"
+        onClick={onToggle}
+        w="full"
+        bg="brand.teal"
+        color="white"
+        py={6}
+        fontSize="sm"
+        _hover={{ bg: 'white', color: 'brand.navy' }}
+        textTransform="capitalize"
+      >
+        Get In Touch
+      </Button>
+    </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
+const MobileNavItem = ({ label, children, href, onToggle }: NavItem & { onToggle: () => void }) => {
+  const { isOpen, onToggle: onChildToggle } = useDisclosure();
   const location = useLocation();
+  const isActive = href === '/' 
+    ? location.pathname === '/' 
+    : href && location.pathname.startsWith(href);
 
-  const isItemActive = () => {
-    if (href === '/') return location.pathname === '/';
-    if (href && location.pathname.startsWith(href)) return true;
-    if (children) return children.some((child) => child.href && location.pathname.startsWith(child.href));
-    return false;
+  const handleLinkClick = (e: React.MouseEvent) => {
+    if (children) {
+      e.preventDefault();
+      onChildToggle();
+    } else {
+      onToggle();
+    }
   };
 
-  const isActive = isItemActive();
-
   return (
-    <Stack spacing={0}>
+    <Stack spacing={4}>
       <Flex
-        py={4}
-        as={children ? undefined : RouterLink}
-        {...(!children ? { to: href ?? '#' } : { onClick: onToggle })}
-        justify="space-between"
-        align="center"
-        cursor="pointer"
-        _hover={{ textDecoration: 'none' }}
+        py={2}
+        as={Link}
+        onClick={handleLinkClick}
+        justify={'space-between'}
+        align={'center'}
+        _hover={{
+          textDecoration: 'none',
+        }}
       >
         <Text
           fontSize="xs"
           fontWeight={700}
           letterSpacing="2px"
           textTransform="capitalize"
-          color={isActive ? 'brand.gold' : 'whiteAlpha.800'}
+          color={isActive ? 'brand.teal' : 'whiteAlpha.800'}
           transition="color 0.2s"
-          _hover={{ color: 'brand.gold' }}
+          _hover={{ color: 'brand.teal' }}
         >
           {label}
         </Text>
@@ -393,7 +356,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             as={ChevronDownIcon}
             w={5}
             h={5}
-            color={isActive ? 'brand.gold' : 'whiteAlpha.500'}
+            color={isActive ? 'brand.teal' : 'whiteAlpha.500'}
             transition="transform 0.25s ease"
             transform={isOpen ? 'rotate(180deg)' : ''}
           />
@@ -405,7 +368,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           pl={4}
           pb={3}
           borderLeft="2px solid"
-          borderColor="brand.gold"
+          borderColor="brand.teal"
           spacing={0}
           ml={1}
         >
@@ -417,13 +380,14 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                   key={child.label}
                   as={RouterLink}
                   to={child.href ?? '#'}
+                  onClick={onToggle}
                   py={2}
                   fontSize="xs"
                   letterSpacing="1px"
                   textTransform="capitalize"
                   fontWeight={isChildActive ? 700 : 500}
-                  color={isChildActive ? 'brand.gold' : 'whiteAlpha.600'}
-                  _hover={{ color: 'brand.gold', textDecoration: 'none' }}
+                  color={isChildActive ? 'brand.teal' : 'whiteAlpha.600'}
+                  _hover={{ color: 'brand.teal', textDecoration: 'none' }}
                   transition="color 0.2s"
                 >
                   {child.label}

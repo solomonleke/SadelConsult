@@ -22,7 +22,7 @@ const LeaderCard: React.FC<LeaderCardProps> = ({ name, role, qualifications, exp
       p={8}
       borderWidth="1px"
       borderColor={useColorModeValue('gray.100', 'gray.700')}
-      _hover={{ transform: 'translateY(-5px)', shadow: 'xl', borderColor: 'brand.gold' }}
+      _hover={{ transform: 'translateY(-5px)', shadow: 'xl', borderColor: 'brand.teal' }}
       transition="all 0.3s"
       role="group"
     >
@@ -32,7 +32,7 @@ const LeaderCard: React.FC<LeaderCardProps> = ({ name, role, qualifications, exp
           <Heading fontSize={'xl'} fontFamily="heading" color="brand.navy">
             {name}
           </Heading>
-          <Text fontWeight={600} color={'brand.gold'}>
+          <Text fontWeight={600} color={'brand.teal'}>
             {role}
           </Text>
           <Text fontSize={'xs'} color={'gray.500'} fontWeight="bold">

@@ -70,7 +70,7 @@ const Contact = () => {
                     <Button
                       bg={'brand.navy'}
                       color={'white'}
-                      _hover={{ bg: 'brand.gold', color: 'brand.navy' }}
+                      _hover={{ bg: 'brand.teal', color: 'brand.navy' }}
                       w="full"
                       size="lg"
                     >
@@ -102,11 +102,11 @@ const Contact = () => {
 
               <Stack spacing={6}>
                 <Heading size="lg" fontFamily="heading" color="brand.navy">Key Contacts</Heading>
-                <Box p={6} bg="brand.offWhite" borderLeft="4px solid" borderColor="brand.gold">
+                <Box p={6} bg="brand.offWhite" borderLeft="4px solid" borderColor="brand.teal">
                   <Text fontWeight="bold" color="brand.navy">Arc. Muyiwa Osho</Text>
                   <Text fontSize="sm">+234 802 335 9810</Text>
                 </Box>
-                <Box p={6} bg="brand.offWhite" borderLeft="4px solid" borderColor="brand.gold">
+                <Box p={6} bg="brand.offWhite" borderLeft="4px solid" borderColor="brand.teal">
                   <Text fontWeight="bold" color="brand.navy">Mr. Segun Adeleke</Text>
                   <Text fontSize="sm">+234 802 393 8410</Text>
                 </Box>
@@ -132,15 +132,15 @@ const OfficeCard = ({ title, address, phone, email }: { title: string, address: 
     <Heading size="md" mb={4} color="brand.navy">{title}</Heading>
     <VStack align="start" spacing={3}>
       <HStack>
-        <Icon as={MdLocationOn as any} color="brand.gold" />
+        <Icon as={MdLocationOn as any} color="brand.teal" />
         <Text fontSize="sm">{address}</Text>
       </HStack>
       <HStack>
-        <Icon as={MdPhone as any} color="brand.gold" />
+        <Icon as={MdPhone as any} color="brand.teal" />
         <Text fontSize="sm">{phone}</Text>
       </HStack>
       <HStack>
-        <Icon as={MdEmail as any} color="brand.gold" />
+        <Icon as={MdEmail as any} color="brand.teal" />
         <Text fontSize="sm">{email}</Text>
       </HStack>
     </VStack>
