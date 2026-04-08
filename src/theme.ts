@@ -13,7 +13,7 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
-      navy: '#0a1628', // Core Navy from Logo
+      navy: '#060e18', // Core Navy from Logo
       steel: '#708090', 
       teal: '#00BFA5',  // Vibrant Teal from Logo
       white: '#FFFFFF',

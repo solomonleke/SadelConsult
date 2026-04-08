@@ -14,33 +14,34 @@ import {
   Img,
 } from '@chakra-ui/react';
 import { MdCheckCircle, MdArrowForward, MdArchitecture, MdEngineering, MdCalculate, MdConstruction } from 'react-icons/md';
+import { PiNotepad } from "react-icons/pi";
 import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
 import ServiceCard from '../components/ServiceCard';
 import zariaImage from '../assets/ZariaWaterExpansion.webp';
-import Abaji from '../assets/Abaji.png';
-import engineering from '../assets/engineering.png';
-import Reclaimation from '../assets/Reclaimation.png';
-import Highwayy from '../assets/Highwayy.png';
-import Civil from '../assets/Civil.png';
+import Abaji from '../assets/Abaji.jpg';
+import Engineering from '../assets/Engineering.jpg';
+import Reclaimation from '../assets/Reclaimation.jpg';
+import Highwayy from '../assets/Highwayy.jpg';
+import Civil from '../assets/Civil.jpg';
 import Highway from '../assets/Highway.png';
-import Architecture from '../assets/Architecture.png';
-import Water from '../assets/Water.png';
-import About from '../assets/About.png';
+import Architecture from '../assets/Architecture.jpg';
+import Water from '../assets/Water.jpg';
+import About from '../assets/About.jpg';
 
 const Home = () => {
   const Navigate = useNavigate();
-  const images = [ Architecture, Civil, engineering, Water, Highwayy];
+  const images = [Architecture, Civil, Engineering, Water, Highwayy];
 
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  }, 4000); // change every 4s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // change every 4s
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Layout>
@@ -73,7 +74,7 @@ useEffect(() => {
               Architecture & Engineering Value, Delivering Futures.
             </Heading>
             <Text fontSize={'lg'} color={'whiteAlpha.800'} textShadow="0 2px 8px rgba(0,0,0,0.6)" >
-              Sadel Consults Limited is a Nigerian multi-disciplinary consultancy providing 
+              Sadel Consults Limited is a Nigerian multi-disciplinary consultancy providing
               sustainable, value-for-money solutions through creative design and rigorous engineering.
             </Text>
             <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
@@ -101,44 +102,44 @@ useEffect(() => {
             </Stack>
           </Stack>
         </Container>
-        
+
         {/* Abstract Background Element */}
         <Box
-  position="absolute"
-  top="-10%"
-  right="-10%"
-  width="60%"
-  height="120%"
-  overflow="hidden"
-  transform="skewX(-20deg)"
-  zIndex={0}
->
-  {images.map((img, index) => (
-    <Box
-      key={index}
-      position="absolute"
-      top="0"
-      left="0"
-      width="100%"
-      height="100%"
-      backgroundImage={`url(${img})`}
-      backgroundSize="cover"
-      backgroundPosition="center"
-      transition="opacity 0.8s ease-in-out"
-      opacity={index === currentIndex ? 1 : 0}
-    />
-  ))}
+          position="absolute"
+          top="-10%"
+          right="-10%"
+          width="60%"
+          height="120%"
+          overflow="hidden"
+          transform="skewX(-20deg)"
+          zIndex={0}
+        >
+          {images.map((img, index) => (
+            <Box
+              key={index}
+              position="absolute"
+              top="0"
+              left="0"
+              width="100%"
+              height="100%"
+              backgroundImage={`url(${img})`}
+              backgroundSize="cover"
+              backgroundPosition="center"
+              transition="opacity 0.8s ease-in-out"
+              opacity={index === currentIndex ? 1 : 0}
+            />
+          ))}
 
-  {/* Optional overlay for readability */}
-  <Box
-    position="absolute"
-    top="0"
-    left="0"
-    width="100%"
-    height="100%"
-    bg="blackAlpha.400"
-  />
-</Box>
+          {/* Optional overlay for readability */}
+          <Box
+            position="absolute"
+            top="0"
+            left="0"
+            width="100%"
+            height="100%"
+            bg="blackAlpha.400"
+          />
+        </Box>
       </Box>
 
       {/* Compliance Ribbon */}
@@ -171,12 +172,12 @@ useEffect(() => {
             <Stack spacing={6}>
               <Heading fontFamily="heading">Who We Are</Heading>
               <Text fontSize="lg">
-                Founded in 2001 and incorporated under CAC (RC 798935), Sadel Consults 
-                Limited is active across all 36 states and the FCT. Our mission is to 
+                Founded in 2001 and incorporated under CAC (RC 798935), Sadel Consults
+                Limited is active across all 36 states and the FCT. Our mission is to
                 translate development ambitions into bankable, sustainable solutions.
               </Text>
               <Text>
-                We provide an integrated multi-disciplinary approach spanning Architecture, 
+                We provide an integrated multi-disciplinary approach spanning Architecture,
                 Engineering, Environment, Cost Management, and Project Management.
               </Text>
               <Button
@@ -189,7 +190,7 @@ useEffect(() => {
                 Learn More About Our History
               </Button>
             </Stack>
-            <Img src={About} alt="About Us"  />
+            <Img src={About} alt="About Us" />
           </SimpleGrid>
         </Container>
       </Box>
@@ -215,6 +216,17 @@ useEffect(() => {
               description="Civil, structural, mechanical, electrical, and environmental engineering."
               icon={MdEngineering}
               items={['Civil/Highway/Bridge', 'Structural RC/Steel', 'Water & Environment']}
+            />
+            <ServiceCard
+              title="Quantity Surv."
+              description="Comprehensive cost management and financial control for construction projects."
+              icon={PiNotepad}
+              items={[
+                'Cost Estimation & Budgeting',
+                'Bills of Quantities (BOQ)',
+                'Procurement & Tendering',
+                
+              ]}
             />
             <ServiceCard
               title="Cost Management"
@@ -253,14 +265,14 @@ useEffect(() => {
               sector="Water & Hydraulics"
               value="761 km Network"
               description="Expansion of water supply for 2.2M population including 27 reservoirs and 11 booster stations."
-              />
+            />
             <ProjectCard
               title="Abuja–Abaji Dual-Carriageway"
               image={Abaji}
               sector="Transportation"
               value="42 km Highway"
               description="Engineering supervision and design for a critical 42 km dual-carriageway section."
-              />
+            />
             <ProjectCard
               title="Nationwide Mine Reclamation"
               image={Reclaimation}
