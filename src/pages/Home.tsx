@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import {
   Box,
   Container,
@@ -9,14 +11,37 @@ import {
   SimpleGrid,
   Icon,
   Flex,
+  Img,
 } from '@chakra-ui/react';
 import { MdCheckCircle, MdArrowForward, MdArchitecture, MdEngineering, MdCalculate, MdConstruction } from 'react-icons/md';
 import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
 import ServiceCard from '../components/ServiceCard';
 import zariaImage from '../assets/ZariaWaterExpansion.webp';
+import Abaji from '../assets/Abaji.png';
+import engineering from '../assets/engineering.png';
+import Reclaimation from '../assets/Reclaimation.png';
+import Highwayy from '../assets/Highwayy.png';
+import Civil from '../assets/Civil.png';
+import Highway from '../assets/Highway.png';
+import Architecture from '../assets/Architecture.png';
+import Water from '../assets/Water.png';
+import About from '../assets/About.png';
 
 const Home = () => {
+  const Navigate = useNavigate();
+  const images = [ Architecture, Civil, engineering, Water, Highwayy];
+
+const [currentIndex, setCurrentIndex] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, 4000); // change every 4s
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -42,10 +67,12 @@ const Home = () => {
               fontSize={{ base: '4xl', md: '6xl' }}
               lineHeight={'1.1'}
               fontFamily="heading"
+              color="white"
+              textShadow="0 2px 8px rgba(0,0,0,0.6)"
             >
               Architecture & Engineering Value, Delivering Futures.
             </Heading>
-            <Text fontSize={'lg'} color={'whiteAlpha.800'}>
+            <Text fontSize={'lg'} color={'whiteAlpha.800'} textShadow="0 2px 8px rgba(0,0,0,0.6)" >
               Sadel Consults Limited is a Nigerian multi-disciplinary consultancy providing 
               sustainable, value-for-money solutions through creative design and rigorous engineering.
             </Text>
@@ -56,6 +83,7 @@ const Home = () => {
                 _hover={{ bg: '#008f7a' }}
                 size="lg"
                 px={10}
+                onClick={() => Navigate('/portfolio')}
               >
                 View Portfolio
               </Button>
@@ -66,6 +94,7 @@ const Home = () => {
                 _hover={{ bg: 'whiteAlpha.100' }}
                 size="lg"
                 px={10}
+                onClick={() => Navigate('/expertise')}
               >
                 Our Services
               </Button>
@@ -75,15 +104,41 @@ const Home = () => {
         
         {/* Abstract Background Element */}
         <Box
-          position="absolute"
-          top="-10%"
-          right="-10%"
-          width="60%"
-          height="120%"
-          bg="whiteAlpha.100"
-          transform="skewX(-20deg)"
-          zIndex={0}
-        />
+  position="absolute"
+  top="-10%"
+  right="-10%"
+  width="60%"
+  height="120%"
+  overflow="hidden"
+  transform="skewX(-20deg)"
+  zIndex={0}
+>
+  {images.map((img, index) => (
+    <Box
+      key={index}
+      position="absolute"
+      top="0"
+      left="0"
+      width="100%"
+      height="100%"
+      backgroundImage={`url(${img})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      transition="opacity 0.8s ease-in-out"
+      opacity={index === currentIndex ? 1 : 0}
+    />
+  ))}
+
+  {/* Optional overlay for readability */}
+  <Box
+    position="absolute"
+    top="0"
+    left="0"
+    width="100%"
+    height="100%"
+    bg="blackAlpha.400"
+  />
+</Box>
       </Box>
 
       {/* Compliance Ribbon */}
@@ -129,13 +184,12 @@ const Home = () => {
                 color="brand.navy"
                 rightIcon={<Icon as={MdArrowForward as any} />}
                 fontWeight="bold"
+                onClick={() => Navigate('/about')}
               >
                 Learn More About Our History
               </Button>
             </Stack>
-            <Flex bg="gray.200" h="400px" align="center" justify="center" color="gray.500">
-              Project Visualization Placeholder
-            </Flex>
+            <Img src={About} alt="About Us"  />
           </SimpleGrid>
         </Container>
       </Box>
@@ -187,7 +241,7 @@ const Home = () => {
               <Text maxW="2xl" color="whiteAlpha.800">
                 Delivering critical infrastructure across Nigeria.
               </Text>
-              <Button colorScheme="teal" variant="link" color="brand.teal">
+              <Button colorScheme="teal" variant="link" color="brand.teal" onClick={() => Navigate('/portfolio')}>
                 View All Projects
               </Button>
             </Flex>
@@ -199,15 +253,17 @@ const Home = () => {
               sector="Water & Hydraulics"
               value="761 km Network"
               description="Expansion of water supply for 2.2M population including 27 reservoirs and 11 booster stations."
-            />
+              />
             <ProjectCard
               title="Abuja–Abaji Dual-Carriageway"
+              image={Abaji}
               sector="Transportation"
               value="42 km Highway"
               description="Engineering supervision and design for a critical 42 km dual-carriageway section."
-            />
+              />
             <ProjectCard
               title="Nationwide Mine Reclamation"
+              image={Reclaimation}
               sector="Environment"
               value="₦1.47B"
               description="Abandoned mine sites reclamation across 7 states including Edo, Ebonyi, and Plateau."

@@ -14,6 +14,13 @@ import {
 import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
 import zariaImage from '../assets/ZariaWaterExpansion.webp';
+import Abaji from '../assets/Abaji.png';
+import Reclaimation from '../assets/Reclaimation.png';
+import Ceddi from '../assets/Ceddi.png';
+import PHCs from '../assets/PHCs.png';
+import GenHospital from '../assets/GenHospital.png';
+import PhWarri from '../assets/Ph-Warri.png';
+import Minting from '../assets/Minting.png';
 
 const PROJECTS = [
   {
@@ -28,40 +35,47 @@ const PROJECTS = [
     sector: 'Transportation',
     value: '42 km Highway',
     description: 'Engineering supervision and design for a critical 42 km dual-carriageway section.',
+    image: Abaji,
   },
   {
     title: 'Nationwide Mine Reclamation',
     sector: 'Mining',
     value: '₦1.47B',
     description: 'Abandoned mine sites reclamation across 7 states including Edo, Ebonyi, and Plateau.',
+    image: Reclaimation,
   },
   {
     title: 'Ceddi Plaza Abuja',
     sector: 'Buildings',
     description: 'Structural and architectural consultancy for a premier shopping and office complex in Abuja.',
+    image: Ceddi,
   },
   {
     title: '5 State Hospitals Kaduna',
     sector: 'Health',
     value: '₦852M',
     description: 'Upgrading and rehabilitation of healthcare facilities across Kaduna state.',
+    image: GenHospital,
   },
   {
     title: 'Nigerian Security Printing & Minting Factory',
     sector: 'Industrial',
     value: '₦450M',
     description: 'Industrial infrastructure and building consultancy for the Minting factory in Abuja.',
+    image: Minting,
   },
   {
     title: 'Port Harcourt–Warri Highway Rehab',
     sector: 'Transportation',
     value: '149 km Rehab | ₦850M',
     description: 'Rehabilitation of a crucial 149 km highway link between Port Harcourt and Warri.',
+    image: PhWarri,
   },
   {
-     title: 'World Bank PHCs',
-     sector: 'Health',
-     description: 'Rehabilitation of healthcare centers in Ogun, Edo, and Akwa Ibom under World Bank financing.',
+    title: 'World Bank PHCs',
+    sector: 'Health',
+    description: 'Rehabilitation of healthcare centers in Ogun, Edo, and Akwa Ibom under World Bank financing.',
+    image: PHCs,
   }
 ];
 
@@ -106,7 +120,7 @@ const Portfolio = () => {
       <Box bg="brand.navy" color="white" py={20}>
         <Container maxW="container.xl">
           <Stack spacing={4} maxW="3xl">
-            <Heading as="h1" size="2xl" fontFamily="heading">Project Portfolio</Heading>
+            <Heading as="h1" size="2xl" fontFamily="heading" color="white">Project Portfolio</Heading>
             <Text fontSize="xl" color="whiteAlpha.800">
               Transforming development ambitions into sustainable infrastructure.
             </Text>

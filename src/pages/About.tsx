@@ -19,7 +19,7 @@ const About = () => {
       <Box bg="brand.navy" color="white" py={20}>
         <Container maxW="container.xl">
           <Stack spacing={4} maxW="3xl">
-            <Heading as="h1" size="2xl" fontFamily="heading">Who We Are</Heading>
+            <Heading as="h1" size="2xl" fontFamily="heading" color="white">Who We Are</Heading>
             <Text fontSize="xl" color="whiteAlpha.800">
               Trusted Engineering and Architecture Consultancy since 2001.
             </Text>
