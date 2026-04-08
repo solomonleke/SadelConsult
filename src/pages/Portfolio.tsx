@@ -14,13 +14,13 @@ import {
 import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
 import zariaImage from '../assets/ZariaWaterExpansion.webp';
-import Abaji from '../assets/Abaji.png';
-import Reclaimation from '../assets/Reclaimation.png';
-import Ceddi from '../assets/Ceddi.png';
-import PHCs from '../assets/PHCs.png';
+import Abaji from '../assets/Abaji.jpg';
+import Reclaimation from '../assets/Reclaimation.jpg';
+import Ceddi from '../assets/Ceddi.jpg';
+import PHCs from '../assets/PHCs.jpg';
 import GenHospital from '../assets/GenHospital.png';
-import PhWarri from '../assets/Ph-Warri.png';
-import Minting from '../assets/Minting.png';
+import PhWarri from '../assets/Ph-Warri.jpg';
+import Minting from '../assets/Minting.jpg';
 
 const PROJECTS = [
   {

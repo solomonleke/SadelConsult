@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MdArchitecture, MdEngineering, MdCalculate, MdConstruction } from 'react-icons/md';
+import { PiNotepad } from "react-icons/pi";
 import Layout from '../components/Layout';
 import ServiceCard from '../components/ServiceCard';
 
@@ -25,15 +26,17 @@ const Expertise = () => {
   const tabMap: Record<string, number> = {
     'architecture': 0,
     'engineering': 1,
-    'cost-management': 2,
-    'project-management': 3,
+    'quantity Surveying': 2,
+    'cost-management': 3,
+    'project-management': 4,
   };
 
   const reverseTabMap: Record<number, string> = {
     0: 'architecture',
     1: 'engineering',
-    2: 'cost-management',
-    3: 'project-management',
+    2: 'quantity Surveying',
+    3: 'cost-management',
+    4: 'project-management',
   };
 
   const activeIndex = service ? tabMap[service] ?? 0 : 0;
@@ -72,6 +75,9 @@ const Expertise = () => {
                 <Icon as={MdEngineering as any} mr={2} /> Engineering
               </Tab>
               <Tab fontWeight="bold" fontSize="lg">
+                <Icon as={PiNotepad as any} mr={2} /> Quantity Surveying 
+              </Tab>
+              <Tab fontWeight="bold" fontSize="lg">
                 <Icon as={MdCalculate as any} mr={2} /> Cost Management
               </Tab>
               <Tab fontWeight="bold" fontSize="lg">
@@ -86,11 +92,12 @@ const Expertise = () => {
                     description="From concept to commissioning, we deliver aesthetically pleasing and functional designs."
                     icon={MdArchitecture}
                     items={[
+                      'Programming & Feasibility studies',
                       'Concept & Schematic Design',
-                      '3D Visualisation & BIM Modelling',
-                      'Interior & Landscape Architecture',
-                      'Green-Building Advisory',
-                      'Authority Approvals',
+                      'Design Development',
+                      'Construction Documents (CDs)',
+                      'Permitting & Approvals',
+                      'Post-Occupancy Evaluation (POE)',
                     ]}
                   />
                   <Stack spacing={6}>
@@ -104,6 +111,7 @@ const Expertise = () => {
                   </Stack>
                 </SimpleGrid>
               </TabPanel>
+              
               <TabPanel>
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} py={10}>
                   <ServiceCard
@@ -128,6 +136,38 @@ const Expertise = () => {
                   </Stack>
                 </SimpleGrid>
               </TabPanel>
+
+              <TabPanel>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} py={10}>
+                   <ServiceCard
+                    title="Quantity Surveying"
+                    description="Professional cost management and financial control services ensuring projects are delivered within budget and to the highest standards."
+                    icon={PiNotepad}
+                    items={[
+                      'Feasibility & Viability Studies',
+                      'Cost Planning & Estimation',
+                      'Procurement Advisory',
+                      'Tender Management',
+                      'Contract Preparation',
+                      'Cost Control & Monitoring',
+                      'Valuations & Payment Certificates',
+                      'Change Order / Variation Management',
+                      'Procurement of Specialist Work',
+                      'Due Diligence',
+                    ]}
+                  />
+                  <Stack spacing={6}>
+                    <Heading size="md" color="brand.navy">Cost Efficiency & Value</Heading>
+                    <Text>
+                      Our quantity surveying team ensures financial discipline across all project 
+        stages, from initial cost planning to final account settlement. We deliver 
+        value-driven solutions that optimize resources while maintaining quality 
+        and project timelines.
+                    </Text>
+                  </Stack>
+                </SimpleGrid>
+              </TabPanel>
+
               <TabPanel>
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} py={10}>
                   <ServiceCard
