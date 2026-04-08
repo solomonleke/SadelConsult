@@ -29,7 +29,7 @@ const Contact = () => {
       <Box bg="brand.navy" color="white" py={20}>
         <Container maxW="container.xl">
           <Stack spacing={4} maxW="3xl">
-            <Heading as="h1" size="2xl" fontFamily="heading">Contact Us</Heading>
+            <Heading as="h1" size="2xl" fontFamily="heading" color="white" >Contact Us</Heading>
             <Text fontSize="xl" color="whiteAlpha.800">
               Speak with our consultants about your next project.
             </Text>

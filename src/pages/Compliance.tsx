@@ -25,7 +25,7 @@ const Compliance = () => {
       <Box bg="brand.navy" color="white" py={20}>
         <Container maxW="container.xl">
           <Stack spacing={4} maxW="3xl">
-            <Heading as="h1" size="2xl" fontFamily="heading">Compliance & QHSE</Heading>
+            <Heading as="h1" size="2xl" fontFamily="heading" color="white">Compliance & QHSE</Heading>
             <Text fontSize="xl" color="whiteAlpha.800">
               Upholding the highest standards of professional and statutory accountability.
             </Text>
