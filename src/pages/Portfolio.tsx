@@ -18,7 +18,7 @@ import Abaji from '../assets/Abaji.jpg';
 import Reclaimation from '../assets/Reclaimation.jpg';
 import Ceddi from '../assets/Ceddi.jpg';
 import PHCs from '../assets/PHCs.jpg';
-import GenHospital from '../assets/GenHospital.png';
+import GenHospital from '../assets/GenHospital.jpg';
 import PhWarri from '../assets/Ph-Warri.jpg';
 import Minting from '../assets/Minting.jpg';
 

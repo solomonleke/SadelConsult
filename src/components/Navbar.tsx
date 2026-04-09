@@ -43,9 +43,9 @@ export default function Navbar() {
             display="flex"
             alignItems="center"
           >
-            <Image 
-              src={logo} 
-              alt="SADEL" 
+            <Image
+              src={logo}
+              alt="SADEL"
               h={{ base: "40px", md: "50px" }}
               objectFit="contain"
             />
@@ -126,8 +126,8 @@ const DesktopNav = () => {
   return (
     <Stack direction={'row'} spacing={1}>
       {NAV_ITEMS.map((navItem) => {
-        const isActive = navItem.href === '/' 
-          ? location.pathname === '/' 
+        const isActive = navItem.href === '/'
+          ? location.pathname === '/'
           : navItem.href && location.pathname.startsWith(navItem.href);
 
         return (
@@ -138,7 +138,7 @@ const DesktopNav = () => {
               p={2}
               px={5}
               fontSize={'sm'}
-              fontWeight={ isActive ? 700 : 500}
+              fontWeight={isActive ? 700 : 500}
               color={isActive ? 'brand.navy' : 'whiteAlpha.900'}
               bg={isActive ? 'brand.teal' : 'transparent'}
               _hover={{
@@ -260,7 +260,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           opacity={isActive ? 1 : 0}
           _groupHover={{ h: "60%", opacity: 1 }}
         />
-        
+
         <Box pl={isActive ? 4 : 2} transition="all 0.3s">
           <Text
             transition={'all .3s ease'}
@@ -315,24 +315,25 @@ const MobileNav = ({ onToggle }: { onToggle: () => void }) => {
 const MobileNavItem = ({ label, children, href, onToggle }: NavItem & { onToggle: () => void }) => {
   const { isOpen, onToggle: onChildToggle } = useDisclosure();
   const location = useLocation();
-  const isActive = href === '/' 
-    ? location.pathname === '/' 
+  const isActive = href === '/'
+    ? location.pathname === '/'
     : href && location.pathname.startsWith(href);
 
   const handleLinkClick = (e: React.MouseEvent) => {
-    if (children) {
-      e.preventDefault();
-      onChildToggle();
-    } else {
-      onToggle();
-    }
-  };
+  if (children) {
+    e.preventDefault(); // stop navigation for dropdowns
+    onChildToggle();
+  } else {
+    onToggle(); // close mobile menu AND allow navigation
+  }
+};
 
   return (
     <Stack spacing={4}>
       <Flex
         py={2}
-        as={Link}
+        as={RouterLink}
+        to={href ?? '#'}
         onClick={handleLinkClick}
         justify={'space-between'}
         align={'center'}
@@ -430,6 +431,11 @@ const NAV_ITEMS: Array<NavItem> = [
         href: '/expertise/engineering',
       },
       {
+        label: 'Quantity Surveying',
+        subLabel: 'Cost Estimation, BOQ, Procurement & Cost Control',
+        href: '/expertise/quantity-surveying',
+      },
+      {
         label: 'Cost Management',
         subLabel: 'Quantity Surveying & Commercial Advisory',
         href: '/expertise/cost-management',
@@ -450,7 +456,7 @@ const NAV_ITEMS: Array<NavItem> = [
       { label: 'Water Supply', href: '/portfolio/water' },
       { label: 'Mining & Environment', href: '/portfolio/mining' },
       { label: 'Health', href: '/portfolio/health' },
-      { label: 'Industrial', href: '/portfolio/industrial' }, 
+      { label: 'Industrial', href: '/portfolio/industrial' },
     ],
   },
   {

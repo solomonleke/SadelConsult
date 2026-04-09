@@ -22,16 +22,15 @@ import zariaImage from '../assets/ZariaWaterExpansion.webp';
 import Abaji from '../assets/Abaji.jpg';
 import Engineering from '../assets/Engineering.jpg';
 import Reclaimation from '../assets/Reclaimation.jpg';
-import Highwayy from '../assets/Highwayy.jpg';
+import Highway from '../assets/Highway.jpg';
 import Civil from '../assets/Civil.jpg';
-import Highway from '../assets/Highway.png';
 import Architecture from '../assets/Architecture.jpg';
 import Water from '../assets/Water.jpg';
 import About from '../assets/About.jpg';
 
 const Home = () => {
   const Navigate = useNavigate();
-  const images = [Architecture, Civil, Engineering, Water, Highwayy];
+  const images = [Architecture, Civil, Engineering, Water, Highway];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -225,7 +224,7 @@ const Home = () => {
                 'Cost Estimation & Budgeting',
                 'Bills of Quantities (BOQ)',
                 'Procurement & Tendering',
-                
+
               ]}
             />
             <ServiceCard
@@ -249,11 +248,26 @@ const Home = () => {
         <Container maxW="container.xl">
           <Stack spacing={12} mb={16}>
             <Heading fontFamily="heading" color="brand.teal">Flagship Projects</Heading>
-            <Flex justify="space-between" align="flex-end">
-              <Text maxW="2xl" color="whiteAlpha.800">
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              justify="space-between"
+              align={{ base: 'flex-start', md: 'flex-end' }}
+              gap={{ base: 4, md: 0 }}
+            >
+              <Text
+                maxW={{ base: 'full', md: '2xl' }}
+                color="whiteAlpha.800"
+              >
                 Delivering critical infrastructure across Nigeria.
               </Text>
-              <Button colorScheme="teal" variant="link" color="brand.teal" onClick={() => Navigate('/portfolio')}>
+
+              <Button
+                colorScheme="teal"
+                variant="link"
+                color="brand.teal"
+                alignSelf={{ base: 'flex-start', md: 'auto' }}
+                onClick={() => Navigate('/portfolio')}
+              >
                 View All Projects
               </Button>
             </Flex>

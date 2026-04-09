@@ -26,7 +26,7 @@ const Expertise = () => {
   const tabMap: Record<string, number> = {
     'architecture': 0,
     'engineering': 1,
-    'quantity Surveying': 2,
+    'quantity-surveying': 2,
     'cost-management': 3,
     'project-management': 4,
   };
@@ -34,7 +34,7 @@ const Expertise = () => {
   const reverseTabMap: Record<number, string> = {
     0: 'architecture',
     1: 'engineering',
-    2: 'quantity Surveying',
+    2: 'quantity-surveying',
     3: 'cost-management',
     4: 'project-management',
   };
@@ -67,23 +67,28 @@ const Expertise = () => {
             index={activeIndex} 
             onChange={handleTabChange}
           >
-            <TabList mb="1em">
-              <Tab fontWeight="bold" fontSize="lg">
-                <Icon as={MdArchitecture as any} mr={2} /> Architecture
-              </Tab>
-              <Tab fontWeight="bold" fontSize="lg">
-                <Icon as={MdEngineering as any} mr={2} /> Engineering
-              </Tab>
-              <Tab fontWeight="bold" fontSize="lg">
-                <Icon as={PiNotepad as any} mr={2} /> Quantity Surveying 
-              </Tab>
-              <Tab fontWeight="bold" fontSize="lg">
-                <Icon as={MdCalculate as any} mr={2} /> Cost Management
-              </Tab>
-              <Tab fontWeight="bold" fontSize="lg">
-                <Icon as={MdConstruction as any} mr={2} /> Project Mgmt
-              </Tab>
-            </TabList>
+           <Box overflowX="auto">
+  <TabList
+    mb="1em"
+    minW="max-content" // prevents shrinking
+  >
+    <Tab fontWeight="bold" fontSize="lg">
+      <Icon as={MdArchitecture as any} mr={2} /> Architecture
+    </Tab>
+    <Tab fontWeight="bold" fontSize="lg">
+      <Icon as={MdEngineering as any} mr={2} /> Engineering
+    </Tab>
+    <Tab fontWeight="bold" fontSize="lg">
+      <Icon as={PiNotepad as any} mr={2} /> Quantity Surveying
+    </Tab>
+    <Tab fontWeight="bold" fontSize="lg">
+      <Icon as={MdCalculate as any} mr={2} /> Cost Management
+    </Tab>
+    <Tab fontWeight="bold" fontSize="lg">
+      <Icon as={MdConstruction as any} mr={2} /> Project Mgmt
+    </Tab>
+  </TabList>
+</Box>
             <TabPanels>
               <TabPanel>
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} py={10}>
