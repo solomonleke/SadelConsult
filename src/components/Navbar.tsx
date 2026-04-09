@@ -435,11 +435,7 @@ const NAV_ITEMS: Array<NavItem> = [
         subLabel: 'Cost Estimation, BOQ, Procurement & Cost Control',
         href: '/expertise/quantity-surveying',
       },
-      {
-        label: 'Cost Management',
-        subLabel: 'Quantity Surveying & Commercial Advisory',
-        href: '/expertise/cost-management',
-      },
+      
       {
         label: 'Project Management',
         subLabel: 'Construction Supervision & QA/QC',

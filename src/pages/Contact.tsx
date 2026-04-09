@@ -89,14 +89,14 @@ const Contact = () => {
                   title="Head Office (Lagos)"
                   address="37 Babington Ashaye Street, Okota, Lagos"
                   phone="+234 802 393 8410"
-                  email="sadelconsults@gmail.com"
+                  email="info@sadelconsults.com"
                 />
                 
                 <OfficeCard 
                   title="Abuja Branch"
                   address="Plot 67 Emmanuel Ozigi Street, Apo, Abuja"
                   phone="+234 802 335 9810"
-                  email="sadelconsults@gmail.com"
+                  email="info@sadelconsults.com"
                 />
               </Stack>
 
@@ -104,11 +104,9 @@ const Contact = () => {
                 <Heading size="lg" fontFamily="heading" color="brand.navy">Key Contacts</Heading>
                 <Box p={6} bg="brand.offWhite" borderLeft="4px solid" borderColor="brand.teal">
                   <Text fontWeight="bold" color="brand.navy">Arc. Muyiwa Osho</Text>
-                  <Text fontSize="sm">+234 802 335 9810</Text>
                 </Box>
                 <Box p={6} bg="brand.offWhite" borderLeft="4px solid" borderColor="brand.teal">
                   <Text fontWeight="bold" color="brand.navy">Mr. Segun Adeleke</Text>
-                  <Text fontSize="sm">+234 802 393 8410</Text>
                 </Box>
               </Stack>
             </Stack>
