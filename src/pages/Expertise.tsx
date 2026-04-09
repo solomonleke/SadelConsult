@@ -204,11 +204,11 @@ const Expertise = () => {
                     description="Comprehensive oversight to deliver projects on time and within scope."
                     icon={MdConstruction}
                     items={[
-                      'Scheduling (Primavera/MS Project)',
-                      'HSE Planning & Supervision',
-                      'Quality Assurance & Quality Control (QA/QC)',
-                      'Risk Management',
-                      'Defects-Liability Management',
+                      'Budget & Cost Management',
+                      'Team Assembly & Appointments',
+                      'Regulatory & Approvals Management',
+                      'Construction Monitoring & Oversight',
+                      'Programme & Schedule Management',
                     ]}
                   />
                   <Stack spacing={6}>

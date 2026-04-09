@@ -217,7 +217,7 @@ const Home = () => {
               items={['Civil/Highway/Bridge', 'Structural RC/Steel', 'Water & Environment']}
             />
             <ServiceCard
-              title="Quantity Surv."
+              title="Quantity Surveying"
               description="Comprehensive cost management and financial control for construction projects."
               icon={PiNotepad}
               items={[
