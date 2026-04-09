@@ -209,6 +209,7 @@ const Expertise = () => {
                       'Regulatory & Approvals Management',
                       'Construction Monitoring & Oversight',
                       'Programme & Schedule Management',
+                      'Risk Management',
                     ]}
                   />
                   <Stack spacing={6}>

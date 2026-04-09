@@ -221,9 +221,9 @@ const Home = () => {
               description="Comprehensive cost management and financial control for construction projects."
               icon={PiNotepad}
               items={[
+                'Procurement & Tendering',
                 'Cost Estimation & Budgeting',
                 'Bills of Quantities (BOQ)',
-                'Procurement & Tendering',
 
               ]}
             />
