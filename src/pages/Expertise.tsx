@@ -27,16 +27,14 @@ const Expertise = () => {
     'architecture': 0,
     'engineering': 1,
     'quantity-surveying': 2,
-    'cost-management': 3,
-    'project-management': 4,
+    'project-management': 3,
   };
 
   const reverseTabMap: Record<number, string> = {
     0: 'architecture',
     1: 'engineering',
     2: 'quantity-surveying',
-    3: 'cost-management',
-    4: 'project-management',
+    3: 'project-management',
   };
 
   const activeIndex = service ? tabMap[service] ?? 0 : 0;
@@ -79,13 +77,11 @@ const Expertise = () => {
       <Icon as={MdEngineering as any} mr={2} /> Engineering
     </Tab>
     <Tab fontWeight="bold" fontSize="lg">
-      <Icon as={PiNotepad as any} mr={2} /> Quantity Surveying
+      <Icon as={MdCalculate as any} mr={2} /> Quantity Surveying
     </Tab>
+   
     <Tab fontWeight="bold" fontSize="lg">
-      <Icon as={MdCalculate as any} mr={2} /> Cost Management
-    </Tab>
-    <Tab fontWeight="bold" fontSize="lg">
-      <Icon as={MdConstruction as any} mr={2} /> Project Mgmt
+      <Icon as={MdConstruction as any} mr={2} /> Project Management
     </Tab>
   </TabList>
 </Box>
@@ -147,7 +143,7 @@ const Expertise = () => {
                    <ServiceCard
                     title="Quantity Surveying"
                     description="Professional cost management and financial control services ensuring projects are delivered within budget and to the highest standards."
-                    icon={PiNotepad}
+                    icon={MdCalculate}
                     items={[
                       'Feasibility & Viability Studies',
                       'Cost Planning & Estimation',
@@ -173,30 +169,7 @@ const Expertise = () => {
                 </SimpleGrid>
               </TabPanel>
 
-              <TabPanel>
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} py={10}>
-                  <ServiceCard
-                    title="Cost & Commercial"
-                    description="Expert commercial management to ensure value for money and transparency."
-                    icon={MdCalculate}
-                    items={[
-                      'Feasibility Cost Advice',
-                      'Bills of Quantities',
-                      'PPA/FIDIC Tender Documentation',
-                      'Variation Control & Monitoring',
-                      'Claims & Dispute Resolution',
-                    ]}
-                  />
-                  <Stack spacing={6}>
-                    <Heading size="md" color="brand.navy">Value Engineering</Heading>
-                    <Text>
-                      We manage costs across the infrastructure lifecycle, from 
-                      initial feasibility studies to final accounts. Our QS team 
-                      ensures that every penny spent delivers maximum value.
-                    </Text>
-                  </Stack>
-                </SimpleGrid>
-              </TabPanel>
+              
               <TabPanel>
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} py={10}>
                   <ServiceCard

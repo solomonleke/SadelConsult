@@ -91,7 +91,6 @@ export default function Footer() {
             <ListHeader>Services</ListHeader>
             <Link href={'#'}>Architecture</Link>
             <Link href={'#'}>Engineering</Link>
-            <Link href={'#'}>Cost Management</Link>
             <Link href={'#'}>Project Management</Link>
           </Stack>
           <Stack align={'flex-start'}>
@@ -113,7 +112,7 @@ export default function Footer() {
             </HStack>
             <HStack>
               <Icon as={MdEmail as any} color="brand.teal" />
-              <Text fontSize="sm" color="whiteAlpha.900">sadelconsults@gmail.com</Text>
+              <Text fontSize="sm" color="whiteAlpha.900">info@sadelconsults.com</Text>
             </HStack>
            </Stack>
         </SimpleGrid>

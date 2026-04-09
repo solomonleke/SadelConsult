@@ -219,7 +219,7 @@ const Home = () => {
             <ServiceCard
               title="Quantity Surveying"
               description="Comprehensive cost management and financial control for construction projects."
-              icon={PiNotepad}
+              icon={MdCalculate}
               items={[
                 'Procurement & Tendering',
                 'Cost Estimation & Budgeting',
@@ -227,12 +227,7 @@ const Home = () => {
 
               ]}
             />
-            <ServiceCard
-              title="Cost Management"
-              description="Quantity surveying, commercial advisory, and dispute resolution."
-              icon={MdCalculate}
-              items={['Bills of Quantities', 'Tender Documentation', 'Claims Control']}
-            />
+           
             <ServiceCard
               title="Project Management"
               description="Full-lifecycle construction supervision and risk management."
@@ -278,21 +273,21 @@ const Home = () => {
               image={zariaImage}
               sector="Water & Hydraulics"
               value="761 km Network"
-              description="Expansion of water supply for 2.2M population including 27 reservoirs and 11 booster stations."
+              description="Engineering design and supervision for water supply expansion in Zaria."
             />
             <ProjectCard
               title="Abuja–Abaji Dual-Carriageway"
               image={Abaji}
               sector="Transportation"
               value="42 km Highway"
-              description="Engineering supervision and design for a critical 42 km dual-carriageway section."
+              description="Engineering design for a critical 42 km dual-carriageway section."
             />
             <ProjectCard
               title="Nationwide Mine Reclamation"
               image={Reclaimation}
               sector="Environment"
               value="₦1.47B"
-              description="Abandoned mine sites reclamation across 7 states including Edo, Ebonyi, and Plateau."
+              description="Engineering design and supervision of mine sites reclamation across 7 states including Edo, Ebonyi, and Plateau."
             />
           </SimpleGrid>
         </Container>
